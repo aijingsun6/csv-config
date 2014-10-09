@@ -82,8 +82,8 @@ namespace Com.Alking.CSV
             switch (type)
             {
                 case CsvValueType.Int:
-                    int intValue;
-                    if (int.TryParse(strValue,out intValue))
+                    int intValue = default(int);
+                    if (string.IsNullOrEmpty(strValue) || int.TryParse(strValue, out intValue))
                     {
                         Value = intValue;
                     }
@@ -93,8 +93,8 @@ namespace Com.Alking.CSV
                     }
                     break;
                 case CsvValueType.Long:
-                    long longValue;
-                    if (long.TryParse(strValue,out longValue))
+                    long longValue = default(long);
+                    if (string.IsNullOrEmpty(strValue) || long.TryParse(strValue, out longValue))
                     {
                         Value = longValue;
                     }
@@ -104,12 +104,12 @@ namespace Com.Alking.CSV
                     }
                     break;
                 case CsvValueType.Bool:
-                    string low = strValue.ToLower();
+                    string low = null == strValue ? null : strValue.ToLower();
                     if (low == "true" || low == "yes")
                     {
                         Value = true;
                     }
-                    else if(low == "false" || low == "no")
+                    else if (string.IsNullOrEmpty(low) || low == "false" || low == "no")
                     {
                         Value = false;
                     }
@@ -119,8 +119,8 @@ namespace Com.Alking.CSV
                     }
                     break;
                 case CsvValueType.Float:
-                    float fValue;
-                    if (float.TryParse(strValue,out fValue))
+                    float fValue = default(float);
+                    if (string.IsNullOrEmpty(strValue) || float.TryParse(strValue, out fValue))
                     {
                         Value = fValue;
                     }
@@ -130,8 +130,8 @@ namespace Com.Alking.CSV
                     }
                     break;
                 case CsvValueType.Double:
-                    double dValue;
-                    if (double.TryParse(strValue,out dValue))
+                    double dValue = default(double);
+                    if (string.IsNullOrEmpty(strValue) || double.TryParse(strValue, out dValue))
                     {
                         Value = dValue;
                     }
@@ -141,7 +141,7 @@ namespace Com.Alking.CSV
                     }
                     break;
                 case CsvValueType.String:
-                    Value = strValue;
+                    Value = strValue ?? string.Empty;
                     break;
                 case CsvValueType.None:
                     break;

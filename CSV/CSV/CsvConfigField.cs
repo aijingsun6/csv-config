@@ -25,5 +25,29 @@ namespace Com.Alking.CSV
             Value = value;
         }
 
+        public static implicit operator int(CsvConfigField field)
+        {
+            return field.Value;
+        }
+        public static implicit operator long(CsvConfigField field)
+        {
+            return field.Value;
+        }
+        public static implicit operator float(CsvConfigField field)
+        {
+            return field.Value;
+        }
+        public static implicit operator double(CsvConfigField field)
+        {
+            return field.Value;
+        }
+        public static implicit operator bool(CsvConfigField field)
+        {
+            return field.Value;
+        }
+        public static implicit operator string(CsvConfigField field)
+        {
+            return field.Value;
+        }
     }
 }
