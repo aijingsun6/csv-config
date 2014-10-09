@@ -46,47 +46,40 @@ namespace Edu.Test.CSV
             string key = config[0].Name;
             Assert.AreEqual("key1", key);
             Assert.AreEqual(1, config[0].Value);
-            Assert.AreEqual(config[0], config["key1"]);
 
             Assert.AreEqual(1, config[1].Index);
             Assert.AreEqual(false, config[1].IsKey);
             Assert.AreEqual("key2", config[1].Name);
             bool b = config[1].Value;
             Assert.AreEqual(true, b);
-            Assert.AreEqual(config[1], config["key2"]);
 
             Assert.AreEqual(2, config[2].Index);
             Assert.AreEqual(false, config[2].IsKey);
             Assert.AreEqual("key3", config[2].Name);
             Assert.AreEqual(101, config[2].Value);
-            Assert.AreEqual(config[2], config["key3"]);
 
             Assert.AreEqual(3, config[3].Index);
             Assert.AreEqual(false, config[3].IsKey);
             Assert.AreEqual("key4", config[3].Name);
             Assert.AreEqual(1001, config[3].Value);
-            Assert.AreEqual(config[3], config["key4"]);
 
             Assert.AreEqual(4, config[4].Index);
             Assert.AreEqual(false, config[4].IsKey);
             Assert.AreEqual("key5", config[4].Name);
             float f = config[4].Value;
             Assert.AreEqual(float.Parse("1.1"), f);
-            Assert.AreEqual(config[4], config["key5"]);
 
             Assert.AreEqual(5, config[5].Index);
             Assert.AreEqual(false, config[5].IsKey);
             Assert.AreEqual("key6", config[5].Name);
             double d = config[5].Value;
             Assert.AreEqual(double.Parse("2.1"), d);
-            Assert.AreEqual(config[5], config["key6"]);
 
             Assert.AreEqual(6, config[6].Index);
             Assert.AreEqual(false, config[6].IsKey);
             Assert.AreEqual("key7", config[6].Name);
             string s = config[6].Value;
             Assert.AreEqual("hello world 1", s);
-            Assert.AreEqual(config[6], config["key7"]);
         }
 
         [Test]
@@ -137,47 +130,40 @@ namespace Edu.Test.CSV
             Assert.AreEqual(false, config[0].IsKey);
             Assert.AreEqual("key1", config[0].Name);
             Assert.AreEqual(1, config[0].Value);
-            Assert.AreEqual(config[0], config["key1"]);
 
             Assert.AreEqual(1, config[1].Index);
             Assert.AreEqual(false, config[1].IsKey);
             Assert.AreEqual("key2", config[1].Name);
             bool b = config[1].Value;
             Assert.AreEqual(true, b);
-            Assert.AreEqual(config[1], config["key2"]);
 
             Assert.AreEqual(2, config[2].Index);
             Assert.AreEqual(false, config[2].IsKey);
             Assert.AreEqual("key3", config[2].Name);
             Assert.AreEqual(101, config[2].Value);
-            Assert.AreEqual(config[2], config["key3"]);
 
             Assert.AreEqual(3, config[3].Index);
             Assert.AreEqual(false, config[3].IsKey);
             Assert.AreEqual("key4", config[3].Name);
             Assert.AreEqual(1001, config[3].Value);
-            Assert.AreEqual(config[3], config["key4"]);
 
             Assert.AreEqual(4, config[4].Index);
             Assert.AreEqual(false, config[4].IsKey);
             Assert.AreEqual("key5", config[4].Name);
             float f = config[4].Value;
             Assert.AreEqual(float.Parse("1.1"), f);
-            Assert.AreEqual(config[4], config["key5"]);
 
             Assert.AreEqual(5, config[5].Index);
             Assert.AreEqual(false, config[5].IsKey);
             Assert.AreEqual("key6", config[5].Name);
             double d = config[5].Value;
             Assert.AreEqual(double.Parse("2.1"), d);
-            Assert.AreEqual(config[5], config["key6"]);
 
             Assert.AreEqual(6, config[6].Index);
             Assert.AreEqual(true, config[6].IsKey);
             Assert.AreEqual("key7", config[6].Name);
             string s = config[6].Value;
             Assert.AreEqual("k1", s);
-            Assert.AreEqual(config[6], config["key7"]);
         }
 
         [Test]
