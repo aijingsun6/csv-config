@@ -26,13 +26,18 @@ namespace Com.Alking.CSV
         private readonly Dictionary<string,CsvValue.CsvValueType> _typeDic = new Dictionary<string, CsvValue.CsvValueType>
         {
             {"b",CsvValue.CsvValueType.Bool},
+            {"ab",CsvValue.CsvValueType.ArrayBool},
             {"i",CsvValue.CsvValueType.Int},
+            {"ai",CsvValue.CsvValueType.ArrayInt},
             {"l",CsvValue.CsvValueType.Long},
+            {"al",CsvValue.CsvValueType.ArrayLong},
             {"f",CsvValue.CsvValueType.Float},
+            {"af",CsvValue.CsvValueType.ArrayFloat},
             {"d",CsvValue.CsvValueType.Double},
+            {"ad",CsvValue.CsvValueType.ArrayDouble},
             {"s",CsvValue.CsvValueType.String},
+            {"as",CsvValue.CsvValueType.ArrayString},
         }; 
-
 
         private readonly Dictionary<string,CsvValue.CsvValueType> _keyTypeDic = new Dictionary<string, CsvValue.CsvValueType>
         {

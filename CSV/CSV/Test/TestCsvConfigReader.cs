@@ -297,6 +297,35 @@ namespace Edu.Test.CSV
             }
 
         }
+
+        [Test]
+        public void TestFileRead1()
+        {
+            string path = Environment.CurrentDirectory + "/config-1.csv";
+            if (!File.Exists(path))
+            {
+                throw new Exception("file not found");
+            }
+            CsvConfigReader reader = new CsvConfigReader();
+            reader.ReadFile(path);
+
+            CsvValue value = reader[1]["key12"].Value;
+            string[] stringArray = value;
+            Assert.AreEqual(5,stringArray.Length);
+            Assert.AreEqual("hello,001", stringArray[0]);
+            Assert.AreEqual("hello,002", stringArray[1]);
+            Assert.AreEqual("hello,003", stringArray[2]);
+            Assert.AreEqual("hello,004", stringArray[3]);
+            Assert.AreEqual("hello,005", stringArray[4]);
+            bool[] boolArray = reader[1]["key9"].Value;
+            foreach (bool b in boolArray)
+            {
+                Assert.IsTrue(b);
+            }
+
+
+
+        }
     }
 
 }
