@@ -45,7 +45,7 @@ namespace Edu.Test.CSV
         {
             bool[] array = new bool[]{true,false,true,false};//count = 4
             CsvValue value = array;
-            Assert.AreEqual(CsvValue.CsvValueType.ArrayBool,value.Type);
+            Assert.AreEqual(CsvValueType.ArrayBool,value.Type);
             bool[] result = value;
             Assert.AreEqual(4,result.Length);
             for (int i = 0; i < array.Length; i++)
@@ -58,7 +58,7 @@ namespace Edu.Test.CSV
         {
             int[] array = new int[] {1,2,3,4,5,6,7,8,9,10};
             CsvValue value = array;
-            Assert.AreEqual(CsvValue.CsvValueType.ArrayInt, value.Type);
+            Assert.AreEqual(CsvValueType.ArrayInt, value.Type);
             int[] result = value;
             Assert.AreEqual(10, result.Length);
             for (int i = 0; i < array.Length; i++)
@@ -72,7 +72,7 @@ namespace Edu.Test.CSV
         {
             float[] array = {1.1f,1.2f,1.3f,1.4f,1.5f};
             CsvValue value = array;
-            Assert.AreEqual(CsvValue.CsvValueType.ArrayFloat, value.Type);
+            Assert.AreEqual(CsvValueType.ArrayFloat, value.Type);
             float[] result = value;
             Assert.AreEqual(5, result.Length);
             for (int i = 0; i < array.Length; i++)
@@ -85,7 +85,7 @@ namespace Edu.Test.CSV
         {
             string[] array = new string[]{"a","b","c","d","e"};
             CsvValue value = array;
-            Assert.AreEqual(CsvValue.CsvValueType.ArrayString, value.Type);
+            Assert.AreEqual(CsvValueType.ArrayString, value.Type);
             string[] result = value;
             Assert.AreEqual(5, result.Length);
             for (int i = 0; i < array.Length; i++)
@@ -126,11 +126,11 @@ namespace Edu.Test.CSV
         public void TestConstrcutorInt()
         {
             string src = "";
-            CsvValue value = new CsvValue(CsvValue.CsvValueType.Int,src);
+            CsvValue value = new CsvValue(CsvValueType.Int,src);
             int v = value;
             Assert.AreEqual(0,v);
             src = "1234";
-            value = new CsvValue(CsvValue.CsvValueType.Int, src);
+            value = new CsvValue(CsvValueType.Int, src);
             v = value;
             Assert.AreEqual(1234, v);
         }
@@ -139,7 +139,7 @@ namespace Edu.Test.CSV
         public void TestConstrcutorString()
         {
             string src = "hello";
-            CsvValue value = new CsvValue(CsvValue.CsvValueType.String, src);
+            CsvValue value = new CsvValue(CsvValueType.String, src);
             string v = value;
             Assert.AreEqual(src, v);
         }
@@ -148,7 +148,7 @@ namespace Edu.Test.CSV
         public void TestConstrcutorArray()
         {
             string src = "1;2;3;4;5";
-            CsvValue value = new CsvValue(CsvValue.CsvValueType.ArrayInt, src);
+            CsvValue value = new CsvValue(CsvValueType.ArrayInt, src);
             int[] intArray = value;
             Assert.AreEqual(5,intArray.Length);
             
@@ -159,7 +159,7 @@ namespace Edu.Test.CSV
             Assert.AreEqual(5,intArray[4]);
 
             src = "str0;str1;str2;str3;str4";
-            value = new CsvValue(CsvValue.CsvValueType.ArrayString, src);
+            value = new CsvValue(CsvValueType.ArrayString, src);
             string[] strArray = value;
             for (int i = 0; i < 5; i++)
             {

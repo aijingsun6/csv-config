@@ -23,37 +23,37 @@ namespace Com.Alking.CSV
     /// </summary>
     public class CsvConfigReader : IEnumerable<CsvConfig>
     {
-        private readonly Dictionary<string,CsvValue.CsvValueType> _typeDic = new Dictionary<string, CsvValue.CsvValueType>
+        private readonly Dictionary<string,CsvValueType> _typeDic = new Dictionary<string, CsvValueType>
         {
-            {"b",CsvValue.CsvValueType.Bool},
-            {"ab",CsvValue.CsvValueType.ArrayBool},
-            {"i",CsvValue.CsvValueType.Int},
-            {"ai",CsvValue.CsvValueType.ArrayInt},
-            {"l",CsvValue.CsvValueType.Long},
-            {"al",CsvValue.CsvValueType.ArrayLong},
-            {"f",CsvValue.CsvValueType.Float},
-            {"af",CsvValue.CsvValueType.ArrayFloat},
-            {"d",CsvValue.CsvValueType.Double},
-            {"ad",CsvValue.CsvValueType.ArrayDouble},
-            {"s",CsvValue.CsvValueType.String},
-            {"as",CsvValue.CsvValueType.ArrayString},
+            {"b",CsvValueType.Bool},
+            {"ab",CsvValueType.ArrayBool},
+            {"i",CsvValueType.Int},
+            {"ai",CsvValueType.ArrayInt},
+            {"l",CsvValueType.Long},
+            {"al",CsvValueType.ArrayLong},
+            {"f",CsvValueType.Float},
+            {"af",CsvValueType.ArrayFloat},
+            {"d",CsvValueType.Double},
+            {"ad",CsvValueType.ArrayDouble},
+            {"s",CsvValueType.String},
+            {"as",CsvValueType.ArrayString},
         }; 
 
-        private readonly Dictionary<string,CsvValue.CsvValueType> _keyTypeDic = new Dictionary<string, CsvValue.CsvValueType>
+        private readonly Dictionary<string,CsvValueType> _keyTypeDic = new Dictionary<string, CsvValueType>
         {
-            {"ki",CsvValue.CsvValueType.Int},
-            {"kl",CsvValue.CsvValueType.Long},
-            {"ks",CsvValue.CsvValueType.String},
+            {"ki",CsvValueType.Int},
+            {"kl",CsvValueType.Long},
+            {"ks",CsvValueType.String},
         }; 
 
         private readonly Dictionary<CsvValue,CsvConfig> _configDic = new Dictionary<CsvValue, CsvConfig>();
 
-        private CsvValue.CsvValueType _keyType = CsvValue.CsvValueType.None;
+        private CsvValueType _keyType = CsvValueType.None;
         /// <summary>
         /// main key type.
         /// can be int ,long ,string
         /// </summary>
-        public CsvValue.CsvValueType KeyType
+        public CsvValueType KeyType
         {
             get { return _keyType; }
         }
@@ -114,7 +114,7 @@ namespace Com.Alking.CSV
         private void Reset()
         {
             _configDic.Clear();
-            _keyType = CsvValue.CsvValueType.None;
+            _keyType = CsvValueType.None;
             _fieldNames.Clear();
         }
 
@@ -141,7 +141,7 @@ namespace Com.Alking.CSV
 
                 bool hasKey = false;
                 int keyIndex = -1;
-                Dictionary<int, CsvValue.CsvValueType> typeDic = new Dictionary<int, CsvValue.CsvValueType>();
+                Dictionary<int, CsvValueType> typeDic = new Dictionary<int, CsvValueType>();
 
                 bool hasName = false;
                 Dictionary<int, string> nameDic = new Dictionary<int, string>();

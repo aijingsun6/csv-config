@@ -23,7 +23,7 @@ namespace Edu.Test.CSV
 
             CsvConfigReader reader = new CsvConfigReader();
             reader.Read(new StringReader(sb.ToString()));
-            Assert.AreEqual(CsvValue.CsvValueType.Int,reader.KeyType);
+            Assert.AreEqual(CsvValueType.Int,reader.KeyType);
             Assert.AreEqual(5,reader.Keys.Count);
             Assert.AreEqual(1, reader.Keys[0]);
             Assert.AreEqual(2, reader.Keys[1]);
@@ -96,7 +96,7 @@ namespace Edu.Test.CSV
 
             CsvConfigReader reader = new CsvConfigReader();
             reader.Read(new StringReader(sb.ToString()));
-            Assert.AreEqual(CsvValue.CsvValueType.String, reader.KeyType);
+            Assert.AreEqual(CsvValueType.String, reader.KeyType);
 
             Assert.AreEqual(5,reader[reader.Keys[4]]["key1"].Value);
 
@@ -276,7 +276,7 @@ namespace Edu.Test.CSV
             Assert.AreEqual("nameDouble", reader.FieldNames[5]);
             Assert.AreEqual("nameString", reader.FieldNames[6]);
             Assert.AreEqual(100,reader.Keys.Count);
-            Assert.AreEqual(CsvValue.CsvValueType.Int,reader.KeyType);
+            Assert.AreEqual(CsvValueType.Int,reader.KeyType);
             for (int i = 1; i <= 100; i++)
             {
                 if (i <26 || (i > 50 && i < 76))
